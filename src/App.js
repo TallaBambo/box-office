@@ -1,15 +1,23 @@
 import React from "react";
 import { Routes, Route } from 'react-router-dom'
+import Navs from "./components/nav";
+import Home from "./pages/Home";
+import Starred from "./pages/Stared";
 
 function App() {
-  return <Routes >
+  return (
+    <div>
+      <Navs />
+      <Routes >
 
-    <Route path='/' exact element={<p>This is the home page</p>} ></Route>
-    <Route path='/stared' exact element={<p>This is the starred page</p>} ></Route>
-    <Route path="*" element={<p>This is 404 page</p>}></Route>
+        <Route path='/' exact element={<Home />} ></Route>
+        <Route path='/starred' exact element={<Starred />} ></Route>
+        <Route path="*" element={<p>Not found</p>}></Route>
 
-  </Routes>
+      </Routes>
 
+    </div>
+  )
 }
 
 export default App;
