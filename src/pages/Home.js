@@ -43,8 +43,6 @@ const Home = () => {
         setSeachOption(ev.target.value)
     }
 
-    console.log(searchOption)
-
     return (
         <MainPageLayout>
             <input type="text" placeholder="Search for somthing" onChange={onInputChange} onKeyDown={onKeyDown} value={input} />
