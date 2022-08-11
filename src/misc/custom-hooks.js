@@ -10,12 +10,13 @@ function showsReducer(prevState, action) {
             return prevState.filter(showId => showId !== action.showId)
         }
 
-        default: return prevState
+        default:
+            return prevState
     }
 }
 
 function usePersistedReducer(reducer, initialState, key) {
-    const [state, dispatch] = useReducer(reducer, initialState, (initial) => {
+    const [state, dispatch] = useReducer(reducer, initialState, initial => {
         const persisted = localStorage.getItem(key)
 
         return persisted ? JSON.parse(persisted) : initial
